@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //
+        var product = [
+            ["Куртка", 245, 2],
+            ["Обувь", 300, 3],
+        ];
+
+        function countBasketPrice(product) {
+            var sum = 0
+            for (i = 0; i < product.length; i++) {
+                sum += product[i][1] * product[i][2];
+            }
+            return sum;
+        }
+        console.log(countBasketPrice(product));
+
+        //
+        for (i = 0; i <= 9; console.log(i++));
+
+        //
+        var str = '';
+
+        for (i = 0; i < 20; i++) {
+            str += 'x';
+
+            for (j = 0; j < i; j++) {
+                str += 'x';
+            }
+            str += "\r\n";
+        };
+
+        console.log(str);
+
+        //
+        var i = 0;
+        do {
+            if (i === 0) {
+                console.log(i + ' - ноль');
+            } else if (i % 2 === 0) {
+                console.log(i + ' - четное число');
+            } else {
+                console.log(i + ' - нечетное число');
+            }
+
+            i++;
+        } while (i <= 10);
+
+    </script>
+
+
+    <!--HOMEWORK FOR LESSEN 4-->
+    
+    <script type="text/javascript">
+        // задание 1
+        function numObj() {
+            var num = prompt('Введите число от 0 до 999');
+            var arrNum = num.split('');
+            if (arrNum.length < 3) {
+                for (i = 0; i < 2; i++) {
+                    arrNum.unshift(0);
+                }
+            } else if (arrNum.length > 3) {
+                alert('Вы ввели слишком большое число');
+            };
+            let objNum = {};
+            objNum['сотни'] = +arrNum[0];
+            objNum['десятки'] = +arrNum[1];
+            objNum['единицы'] = +arrNum[2];
+            console.log(objNum);
+        }
+        numObj();
+
+        // задание 2
+        let product1 = {
+            name: 'jacket',
+            price: 245,
+            number: 2,
+            sum: function(){
+                var result = this.price * this.number;
+                return result;
+            }
+        }
+        //console.log(product1.sum());
+        
+        let product2 = {
+            name: 'shoes',
+            price: 300,
+            number: 3,
+            sum: function(){
+                var result = this.price * this.number;
+                return result;
+            }
+        };
+        
+        var products = [];
+        products.push( product1.sum());
+        products.push( product2.sum());
+        
+        function sumResult(products){
+            var result = products[0] +
+                products[1];
+            return result;
+        }
+        console.log(sumResult(products));
+        
+    
+            
+        </script>
+</body>
+
+</html>
